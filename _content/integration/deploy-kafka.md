@@ -9,7 +9,7 @@ weight: 600
 - [Validate Installation](#validate-installation)
 
 ### Introduction
-This page contains guidance on how to configure the Aspera release for both on-prem and ROKS.
+This page contains guidance on how to configure the Event Streams release for both on-prem and ROKS.
 
 ### Prepare Installation
 
