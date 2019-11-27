@@ -19,7 +19,8 @@ This page provides the guidance for installing MQ for both Red Hat OpenShift on-
 4. Click **Overview** to review the requirements to deploy MQ chart.  
     ![MQ Helm Chart Overview]({{site.github.url}}/assets/img/integration/mq/mq-helm-overview.png)
 5. MQ chart requires the following Role and Rolebinding.
-   1. Role: 
+   1. Role:
+   
       ```
       apiVersion: rbac.authorization.k8s.io/v1
       kind: Role
@@ -34,9 +35,15 @@ This page provides the guidance for installing MQ for both Red Hat OpenShift on-
         verbs:
           - get
       ```
-    2. Copy the above yaml into a file ***mq-role.yaml*** and run the below command to create the Role.  
-        `oc apply -f mq-role.yaml`
+   
+   2. Copy the above yaml into a file ***mq-role.yaml*** and run the below command to create the Role. 
+        
+        ```
+        oc apply -f mq-role.yaml
+        ```
+        
     3.  Rolebinding:
+    
         ```
         apiVersion: rbac.authorization.k8s.io/v1
         kind: RoleBinding
@@ -55,8 +62,13 @@ This page provides the guidance for installing MQ for both Red Hat OpenShift on-
         kind: Group
         name: system:unauthenticated
         ```
+        
     4.  Copy the above yaml into a file ***mq-rolebinding.yaml*** and run the previous command to create rolebinding
-        `oc apply -f mq-rolebinding.yaml`
+    
+        ```
+        oc apply -f mq-rolebinding.yaml
+        ```
+        
 6.	MQ chart also requires a PodSecurityPolicy to be bound to the target namespace. In a default installation the namespace used is ***mq*** and this step may not be required. 
 
 7.	The chart may also require SecurityContextContraints in a non-default installation
