@@ -10,7 +10,7 @@ weight: 500
 
 Here we can define and review policy definitions and see the compliance state of managed clusters.
 
-### Policy example 1
+### Create Simple Policy
 
 Let's create a new policy
 
@@ -24,7 +24,7 @@ This policy stops all traffic to the `default` namespace on any cluster with the
 
 ![Image]({{ site.github.url }}/assets/img/cp4mcm/NetworkPolicyNoInbound.png)
 
-### Policy example 2
+### Namespace Policy
 
 And another policy where we need to have a namespace called `Prod` defined on all clusters where `namespace: Dev` is true.
 
@@ -58,6 +58,35 @@ Then by `category` look at which clusters are found to be not compliant with nam
 Finally, look at all of the policy compliance associated with you collection of `PCI` compliance policies.
 
 ![Image]({{ site.github.url }}/assets/img/cp4mcm/SISummary.png)
+
+
+### Network Policy
+
+The Network Policy is used to control (block) network traffic from other pods.
+
+Configure the new network policy according to the table below
+
+
+|         Field Name         | Value |
+| :-----------------------: | :------ |
+| Name of the policy | Choose a name, for example  policy-nw-residency2020 |
+| Namespace | Choose a namespace for example default |
+| Specifications | Choose:  “Networkpolicy-deny network request” |
+| Cluster selector | Choose  a label, for example, name: local-cluster |
+| Enforce if supported | True/False |
+
+
+### Mutation Policy
+
+## Use Cases
+
+### Use Case 1 
+
+### Use Case 2
+
+### Use Case 3
+
+
 
 
 
