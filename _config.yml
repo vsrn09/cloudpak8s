@@ -64,3 +64,5 @@ exclude:
   - bower.json
   - package.json
   - design
+kramdown:
+    auto_ids: true
